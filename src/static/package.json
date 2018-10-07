@@ -1,0 +1,18 @@
+{
+  "name": "moyu_frontend",
+  "version": "1.0.0",
+  "description": "moyu_frontend",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "repository": {
+  },
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^4.1.3",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.14.4",
+    "vue": "^2.5.17"
+  }
+}
