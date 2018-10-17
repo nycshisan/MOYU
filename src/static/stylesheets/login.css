@@ -1,23 +1,40 @@
-html,
-body {
-  height: 100%;
+.logo {
+  background-color: #ffda44;
+  padding: 1rem 0rem;
 }
 
-body {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-align: center;
-  align-items: center;
-  padding-top: 40px;
-  padding-bottom: 40px;
-  background-color: #f5f5f5;
+.logo img {
+  margin-left: 2rem;
+}
+
+.login-container {
+  padding-left: 50rem;
+  padding-top: 5rem;
+}
+
+.bg {
+  background-image: url(/static/imgs/login-bg.jpg);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90%;
+  min-width: 720px;
+  z-index:-10;
+  zoom: 1;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  background-position: center 0;
 }
 
 .form-signin {
   width: 100%;
   max-width: 330px;
-  padding: 15px;
+  padding: 40px;
   margin: auto;
+  background-color: aliceblue;
 }
 .form-signin .checkbox {
   font-weight: 400;
