@@ -1,0 +1,54 @@
+body {
+    background-color: #e9ecef;
+}
+
+.subtypes {
+    border-radius: 10px;
+    background-color: #fff;
+    margin-bottom: 20px;
+    padding: 11px 0 11px 35px;
+    box-shadow: 3px 3px 1px #888888;
+}
+
+.subtype {
+    display: inline-block;
+    width: 19.5%;
+}
+
+.item {
+    background-color: white;
+    margin-bottom: 1rem;
+    padding: 10px;
+    box-shadow: 2px 2px 1px #888888;
+    border-radius: 4px;
+}
+
+.item-seller-avatar, .item-seller-name {
+    display: inline-block;
+}
+
+.item-info {
+    margin-top: 1rem;
+}
+
+.item-info-pic > img {
+    width: 100%;
+}
+
+.item-info-attr {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    height: 1rem;
+}
+
+.item-info-price {
+    float: left;
+}
+
+.item-info-price > span {
+    color: red;
+}
+
+.item-seller-location {
+    float: right;
+}

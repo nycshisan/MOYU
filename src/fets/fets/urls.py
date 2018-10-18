@@ -19,4 +19,5 @@ from fets import views
 
 urlpatterns = [
     path('login/', views.login),
+    path('items/<catalog>/', views.item)
 ]
