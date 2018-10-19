@@ -48,7 +48,9 @@ catalogVM.catalogs = [
                 </div>
                 <div class="item-info">
                   <div class="item-info-pic">
-                    <img src="{{ item.info.pic }}" />
+                    <a href="{{ item.href }}">
+                      <img src="{{ item.info.pic }}" class="item-info-pic-img"/>
+                    </a>
                   </div>
                   <div class="item-info-attr">
                     <div class="item-info-price">

@@ -5,7 +5,7 @@ from fets.misc import *
 def login(request):
     return render(request, "login.html", {'title': 'login'})
 
-def item(request, catalog):
+def catalog(request, catalog):
     content = {
         'title': catalog,
         'catalogs': random_words(5),
@@ -13,3 +13,9 @@ def item(request, catalog):
         'items': [random_item() for _ in range(50)],
     }
     return render(request, 'items.html', content)
+
+def item(request, item):
+    content = {
+        'item': random_item(),
+    }
+    return render(request, 'itemDetails.html', content)
