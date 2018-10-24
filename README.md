@@ -1,6 +1,10 @@
 # MOYU
 Fudan University 2018 SE group project
 
+2018.10.23:add func for models.
+1)MODELNAME.Create_MODELNAME.For instance,User.Create_User()
+2)User.Login()
+
 2018.10.22:add database  model for backend
 func:Django with model
 database configuration:
