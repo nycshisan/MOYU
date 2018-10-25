@@ -1,0 +1,166 @@
+{% extends "moyuweb/base.html" %}
+
+{% block body %}
+    <br/>
+    <br/>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2">
+            </div>
+            <div class="col-md-5">
+                <h4>
+                    今天您有什么闲置宝贝想要出售？
+                </h4>
+            </div>
+            <div class="col-md-5">
+            </div>
+        </div>
+        <br/>
+        <div class="row">
+            <div class="col-md-2">
+            </div>
+            <div class="col-md-5">
+                <form style="width:500px">
+                    <div class="form-group">
+                        <label for="title">
+                            <strong>
+                                标题：
+                            </strong>
+                        </label>
+                        <input class="form-control" id="title" placeholder="给宝贝起个名字吧～" type="text">
+                        </input>
+                    </div>
+                    <div class="form-group">
+                        <label for="class">
+                            <strong>
+                                类别：
+                            </strong>
+                        </label>
+                        <select class="form-control" id="class" style="width:200px">
+                            <option value="c1">
+                                数码产品
+                            </option>
+                            <option value="c2">
+                                母婴用品
+                            </option>
+                            <option value="c3">
+                                家居日用
+                            </option>
+                            <option value="c4">
+                                影音家电
+                            </option>
+                            <option value="c5">
+                                鞋服配饰
+                            </option>
+                            <option value="c6">
+                                珠宝收藏
+                            </option>
+                            <option value="c7">
+                                其他
+                            </option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="isnew">
+                            <strong>
+                                新旧：
+                            </strong>
+                        </label>
+                        <div>
+                            <label class="radio-inline">
+                                <input name="radio" type="radio">
+                                全新
+                                </input>
+                            </label>
+                            <label class="radio-inline">
+                                <input name="radio" type="radio">
+                                非全新
+                                </input>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="price">
+                            <strong>
+                                售价：
+                            </strong>
+                        </label>
+                        <input class="form-control" id="price" placeholder="元" type="text">
+                        </input>
+                    </div>
+                    <div class="form-group">
+                        <label for="bargin">
+                            <strong>
+                                讲价：
+                            </strong>
+                        </label>
+                        <div>
+                            <label class="radio-inline">
+                                <input name="radio" type="radio">
+                                接受
+                                </input>
+                            </label>
+                            <label class="radio-inline">
+                                <input name="radio" type="radio">
+                                拒绝
+                                </input>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="post">
+                            <strong>
+                                运费：
+                            </strong>
+                        </label>
+                        <input class="form-control" id="post" placeholder="元" type="text">
+                        </input>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">
+                            <strong>
+                                联系方式：
+                            </strong>
+                        </label>
+                        <input class="form-control" id="phone" placeholder="手机号" type="text">
+                        </input>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputFile">
+                            <strong>
+                                宝贝图片：
+                            </strong>
+                        </label>
+                        <input class="form-control-file" id="inputFile" type="file"/>
+                        <p class="help-block" style="color: #b0b0b0;">
+                            最多可上传十张照片
+                        </p>
+                    </div>
+                    <div class="form-group">
+                        <label for="description">
+                            <strong>
+                                宝贝描述：
+                            </strong>
+                        </label>
+                        <textarea class="form-control" id="description" placeholder="请介绍一下您的宝贝吧～" rows="8">
+                            </textarea>
+                    </div>
+                    <button class="btn btn-primary" style="background-color: #ffda44;" type="submit">
+                        立即发布
+                    </button>
+                    <div>
+                    </div>
+                    <div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-5">
+                <!--img alt="Bootstrap Image Preview" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1539006779365&di=06dfcb071c2c7ceaf521e48e33fbe406&imgtype=0&src=http%3A%2F%2Fwww.kviso.com%2Fsoft%2FUploadPic%2F2014-11%2F2014112316154616672.jpg" /-->
+                <img alt="Bootstrap Image Preview"
+                     src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1539014327768&di=3ba6101ee0957b3818ab21ef04ad218f&imgtype=0&src=http%3A%2F%2Fe.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2F80cb39dbb6fd526664a714ada018972bd50736fe.jpg"/>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <br/>
+{% endblock %}
