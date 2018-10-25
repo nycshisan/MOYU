@@ -22,14 +22,9 @@ class User(models.Model):
     CreatedAt=models.DateTimeField(auto_now_add=True)
     UpdateAt=models.DateTimeField(auto_now=True)
 
-    def Create_User(self,Email,Password,UserId=1,Nickname="John Doe"):
+    def Create_User(self,Email,Password,Nickname="John Doe"):
         UserType=1
-        if(UserId==0):
-            Nickname="admin"
-            UserType=0
-        elif(UserId==1):
-            Nickname="test"
-        
+
         psw=make_password(Password)
         new_user=User(UserType=UserType,Nickname=Nickname,Email=Email,Password=psw)
 
