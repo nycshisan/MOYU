@@ -5,6 +5,9 @@ from fets.misc import *
 def login(request):
     return render(request, "login.html", {'title': 'login'})
 
+def register(request):
+    return render(request, "register.html", {'title': 'register'})
+
 def catalog(request, catalog):
     content = {
         'title': catalog,

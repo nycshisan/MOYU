@@ -1,0 +1,30 @@
+.logo {
+  background-color: #ffda44;
+  padding: 1rem 0rem;
+}
+
+.logo img {
+  margin-left: 2rem;
+}
+
+.logo > span.register-title {
+  font-size: 1.5rem;
+  padding-left: 1rem;
+  vertical-align: middle;
+}
+
+.logo > span.back-to-login {
+  padding-top: 10px;
+  padding-right: 40px;
+  float: right;
+}
+
+.logo a {
+  color: black;
+}
+
+.container {
+  margin-top: 50px;
+  max-width: 960px;
+  margin-bottom: 150px;
+}

@@ -19,6 +19,7 @@ from fets import views
 
 urlpatterns = [
     path('login/', views.login),
+    path('register/', views.register),
     path('items/<catalog>/', views.catalog),
-    path('itemDetails/<item>/', views.item)
+    path('itemDetails/<item>/', views.item),
 ]
