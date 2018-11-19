@@ -1,7 +1,9 @@
 'use strict'
 
 var pushRequestForNewComments = function(uid, content) {
-    // 请后端同学在这里对接……
+    // 请后端同学在这里对接...
+    // uid是后端提供的用户id
+    // content是新评论的内容
 }
 
 var detailsVM = new Vue({

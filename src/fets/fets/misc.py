@@ -74,3 +74,8 @@ def random_itemcomments():
         return []
     else:
         return [random_itemcomment() for _ in range(random.randint(1, 5))]
+
+def random_option():
+    title = random_word()
+    choices = random_words(random.randint(3, 12))
+    return EvaluateOption(title, choices)

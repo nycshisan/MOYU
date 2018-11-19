@@ -40,3 +40,8 @@ class ItemComment:
         self.ele = ele
         self.subcomments = subcomments
         self.is_toplevel = self.subcomments == []
+
+class EvaluateOption:
+    def __init__(self, title, choices):
+        self.title = title
+        self.choices = choices

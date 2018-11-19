@@ -5,15 +5,85 @@
 {% endblock %}
 
 {% block custom_javascripts %}
+<script>
+var n_options = {{ options|length }};
+var choices_contents = [
+    {% for option in options %}
+    [
+        "未选择",
+        {% for choice in option.choices %}
+        "{{ choice }}",
+        {% endfor %}
+    ],
+    {% endfor %}
+];
+</script>
+<script src="/static/javascripts/evaluate.js"></script>
 {% endblock %}
 
 {% block body %}
 <div class="container mt-3">
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-3">
+            <div class="left">
+                <img src="/static/imgs/phone.png">
+                <h1>{{ subtype.name }}</h1>
+                <ul>
+                    <li>
+                        {{ subtype.history }}
+                        <span>历史回收次数</span>
+                    </li>
+                    <li>
+                        {{ subtype.highestPrice }}
+                        <span>回收最高价/元</span>
+                    </li>
+                </ul>
+                <a class="reselect" href="/evaluateMenu">重选机型</a>
+            </div>
         </div>
 
-        <div class="col-md-8">
+        <div class="col-md-9">
+            <div class="right" id="eval">
+                {% for option in options %}
+                <div class="option" @click="setActiveOption({{ loop.index0 }});">
+                    <span class="title">
+                        {{ option.title }}
+                    </span>
+                    <span class="crt-choice">
+                        {% raw %}
+                        {{ 
+                        {% endraw %}
+                            crtChoiceContent({{ loop.index0 }})
+                        {% raw %}
+                        }}
+                        {% endraw %}
+                    </span>
+                    <div class="choices" v-show="activeOptionIndex === {{ loop.index0 }}">
+                        {% set outer_index = loop.index0 %}
+                        {% for choice in option.choices %}
+                        <div class="choice">
+                            <button @click.stop="setCrtChoice({{ outer_index }}, {{ loop.index0 }});" type="button" class="btn btn btn-outline-dark btn-lg btn-block">{{ choice }}</button>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endfor %}
+                <div class="submit">
+                    <button @click="submitEvaluation" class="btn btn-warning btn-lg" type="button">立刻估价</button>
+                </div>
+                <div class="result" v-show="showResult">
+                    <div>
+                        预估价值：
+                        {% raw %}
+                        <span class="price">￥{{ evaluatedResult }}</span>
+                        {% endraw %}
+                    </div>
+                    <div class="actions">
+                        <a href="#" class="btn btn-danger">立刻出售！</a>
+                        <a href="#" class="btn btn-outline-danger">放入回收车</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

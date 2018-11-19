@@ -28,6 +28,12 @@ def item(request, item):
 def evaluate(request, type_):
     content = {
         'title': type_,
+        'subtype': {
+            'name': random_word(),
+            "highestPrice": random.randint(10000, 99999),
+            'history': random.randint(1000, 9999),
+        },
+        'options': [random_option() for _ in range(6)],
     }
     return render(request, 'evaluate.html', content)
 
