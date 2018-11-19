@@ -22,4 +22,6 @@ urlpatterns = [
     path('register/', views.register),
     path('items/<catalog>/', views.catalog),
     path('itemDetails/<item>/', views.item),
+    path('evaluate/<type_>/', views.evaluate),
+    path('evaluateMenu/', views.evaluateMenu),
 ]

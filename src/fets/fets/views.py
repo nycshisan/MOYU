@@ -24,3 +24,18 @@ def item(request, item):
         'my': random_user(),
     }
     return render(request, 'itemDetails.html', content)
+
+def evaluate(request, type_):
+    content = {
+        'title': type_,
+    }
+    return render(request, 'evaluate.html', content)
+
+def evaluateMenu(request):
+    content = {
+        'title': '估价选单',
+        'subtypes': [
+            [{'name': random_word(), 'logo': "apple.png", 'href': random_word()} for _ in range(20)] for _ in range(4)
+        ],
+    }
+    return render(request, 'evaluateMenu.html', content)

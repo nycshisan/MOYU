@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block custom_stylesheets %}
+<link href="/static/stylesheets/evaluateMenu.css" rel="stylesheet">
+{% endblock %}
+
+{% block custom_javascripts %}
+<script>
+{% for index in range(0, subtypes|length) %}
+var subtypes{{ index }} = [
+    {% for subtype in subtypes[index] %}
+    {
+        name: "{{ subtype.name }}",
+        logo: "/static/imgs/{{ subtype.logo }}",
+        href: "/evaluate/{{ subtype.href }}",
+    },
+    {% endfor %}
+];
+{% endfor %}
+var subtypes = [subtypes0, subtypes1, subtypes2, subtypes3];
+</script>
+<script src="/static/javascripts/evaluateMenu.js"></script>
+{% endblock %}
+
+{% block body %}
+<div class="container mt-3" id="menu">
+    <ul class="nav nav-pills nav-fill types">
+        {% raw %}
+        <li class="nav-item" v-for="(type, index) in types">
+            <span :class="typeLogo(index)"></span>
+            <a class="nav-link"
+            @click="changeMenuType(index);"
+            :class="{ active: index === activeIndex }">{{ type }}</a>
+        </li>
+        {% endraw %}
+    </ul>
+    <hr />
+    <div class="row">
+        {% raw %}
+        <ul class="subtypes">
+            <li class="subtypes-block" v-for="subtype in subtypes[activeIndex]">
+                <a :href="subtype.href">
+                    <img :src="subtype.logo">
+                    <p>{{ subtype.name }}</p>
+                </a>
+            </li>
+        </ul>
+        {% endraw %}
+    </div>
+</div>
+{% endblock %}
