@@ -35,11 +35,12 @@ def random_item():
     return Item(seller, info, details, href, comments)
 
 def random_user():
+    id = random.randint(0, 10000)
     name = random_word()
     avatar = 'DefaultAvatar.jpg'
     location = random_word()
     contact = ''.join([str(random.randint(0, 9)) for _ in range(11)])
-    return User(name, avatar, location, contact)
+    return User(id, name, avatar, location, contact)
 
 def random_iteminfo():
     name = random_word()

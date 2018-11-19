@@ -1,5 +1,6 @@
 class User:
-    def __init__(self, name, avatar, location, contact):
+    def __init__(self, id, name, avatar, location, contact):
+        self.id = id
         self.name = name
         self.avatar = '/static/imgs/' + avatar
         self.location = location

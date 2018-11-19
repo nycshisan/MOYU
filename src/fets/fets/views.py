@@ -21,5 +21,6 @@ def item(request, item):
     content = {
         'title': item,
         'item': random_item(),
+        'my': random_user(),
     }
     return render(request, 'itemDetails.html', content)

@@ -6,6 +6,10 @@
 
 {% block custom_javascripts %}
 <script>
+// Some user data for requests
+var myAvatar = "{{ my.avatar }}";
+var myNickname = "{{ my.name }}";
+var myUid = "{{ my.id }}";
 // Initial comments contents coded in html through the template engine
 var commentsData = [
   {% for comment in item.comments %}
@@ -121,6 +125,13 @@ var commentsData = [
           该商品暂无评论！
         </div>
         {% endraw %}
+        <hr>
+        <div class="form-group">
+          <textarea v-model="newCommentContent" class="form-control new-comment-textarea" rows="5" placeholder="添加评论..."></textarea>
+          <div class="new-comment-btn-div mt-3">
+            <button @click.stop="pushNewComment" type="button" class="btn btn-warning">发表评论</button>
+          </div>    
+        </div>
       </b-tab>
     </b-tabs>
   </div>

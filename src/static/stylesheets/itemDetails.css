@@ -55,3 +55,11 @@
     padding-bottom: 5px;
     border-bottom: 1px solid grey;
 }
+
+.new-comment-textarea {
+    resize: none;
+}
+
+.new-comment-btn-div {
+    text-align: right;
+}
