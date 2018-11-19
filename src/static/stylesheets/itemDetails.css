@@ -6,6 +6,10 @@
     border-top: 2px solid black;
 }
 
+.container {
+    margin-bottom: 150px;
+}
+
 .right-border {
     border-right: 1px solid grey;
 }
@@ -44,4 +48,10 @@
 
 .buy-btn:hover {
     background-position-y: 222px;
+}
+
+.comment-time {
+    text-align: right;
+    padding-bottom: 5px;
+    border-bottom: 1px solid grey;
 }

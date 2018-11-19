@@ -21,9 +21,21 @@ class ItemDetails:
         self.update_time = update_time
 
 class Item:
-    def __init__(self, seller, info, details, href, comments=[]):
+    def __init__(self, seller, info, details, href, comments):
         self.seller = seller
         self.info = info
         self.details = details
         self.href = '/itemDetails/' + href
         self.comments = comments
+
+class ItemCommentElement:
+    def __init__(self, user, content, time):
+        self.user = user
+        self.content = content
+        self.time = time
+
+class ItemComment:
+    def __init__(self, ele, subcomments=[]):
+        self.ele = ele
+        self.subcomments = subcomments
+        self.is_toplevel = self.subcomments == []

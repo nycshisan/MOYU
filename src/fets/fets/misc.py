@@ -1,4 +1,5 @@
 import random
+from datetime import datetime
 
 from fets.types import *
 
@@ -21,12 +22,17 @@ def random_interval_string():
     number = random.randint(1, 20)
     return str(number) + ' ' + unit
 
+def random_time():
+    t = random.randint(8 * 1e8, 1e9)
+    return datetime.fromtimestamp(t)
+
 def random_item():
     seller = random_user()
     info = random_iteminfo()
     details = random_itemdetail()
     href = random_word()
-    return Item(seller, info, details, href)
+    comments = random_itemcomments()
+    return Item(seller, info, details, href, comments)
 
 def random_user():
     name = random_word()
@@ -49,3 +55,21 @@ def random_itemdetail():
     visit_number = random.randint(1, 10000)
     update_time = random.randint(1, 10000)
     return ItemDetails(original_price, condition, visit_number, update_time)
+
+def random_itemcomment_element():
+    user = random_user()
+    content = random_paragraph(10, 50)
+    time = random_time()
+    return ItemCommentElement(user, content, time)
+
+def random_itemcomment():
+    ele = random_itemcomment_element()
+    subs = [random_itemcomment_element() for _ in range(random.randint(0, 3))]
+    return ItemComment(ele, subs)
+
+def random_itemcomments():
+    is_null = bool(random.randint(0, 1))
+    if is_null:
+        return []
+    else:
+        return [random_itemcomment() for _ in range(random.randint(1, 5))]

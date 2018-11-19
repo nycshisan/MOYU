@@ -19,6 +19,7 @@ def catalog(request, catalog):
 
 def item(request, item):
     content = {
+        'title': item,
         'item': random_item(),
     }
     return render(request, 'itemDetails.html', content)
